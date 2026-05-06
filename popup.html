@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <span>🇯🇵 JP Proxy</span>
+    <label class="switch">
+      <input type="checkbox" id="toggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="section-title">代理網站清單</div>
+
+  <ul id="site-list"></ul>
+
+  <div class="add-row">
+    <input type="text" id="new-domain" placeholder="輸入域名，例如 nhk.or.jp">
+    <button id="add-btn">新增</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
