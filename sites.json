@@ -1,5 +1,5 @@
 [
   { "name": "Fanza", "domain": "dmm.co.jp/mono/" },
-  { "name": "Yahoo Japan", "domain": "yahoo.co.jp" },
-  { "name": "Nicovideo", "domain": "nicovideo.jp" }
+  { "name": "DMM主站", "domain": "dmm.co.jp" },
+  { "name": "DMM R18", "domain": "dmm.com" }
 ]
