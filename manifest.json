@@ -15,5 +15,11 @@
   },
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["sites.json"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

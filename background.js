@@ -11,11 +11,22 @@ function buildPAC(domains) {
       if (
         ${conditions}
       ) {
-        return "HTTPS ${PROXY_HOST}:${PROXY_PORT}";
+        return "PROXY ${PROXY_HOST}:${PROXY_PORT}";
       }
       return "DIRECT";
     }
   `;
+}
+
+async function loadSitesFromJSON() {
+  const { sites } = await chrome.storage.local.get("sites");
+  if (sites && sites.length > 0) return; // 已經有資料就不覆蓋
+
+  const url = chrome.runtime.getURL("sites.json");
+  const res = await fetch(url);
+  const data = await res.json();
+  const domains = data.map(item => item.domain);
+  await chrome.storage.local.set({ sites: domains });
 }
 
 async function applyProxy() {
@@ -41,5 +52,5 @@ chrome.runtime.onMessage.addListener((msg) => {
   if (msg.type === "UPDATE") applyProxy();
 });
 
-// 啟動時套用
-applyProxy();
+// 啟動時自動載入 sites.json 再套用
+loadSitesFromJSON().then(() => applyProxy());
