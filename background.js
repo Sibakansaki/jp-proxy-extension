@@ -1,5 +1,5 @@
-const PROXY_HOST = "你的日本伺服器IP";
-const PROXY_PORT = 443;
+const PROXY_HOST = "140.245.92.189";
+const PROXY_PORT = 3128;
 
 function buildPAC(domains) {
   const conditions = domains
