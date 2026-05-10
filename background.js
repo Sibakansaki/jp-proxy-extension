@@ -1,5 +1,7 @@
 const PROXY_HOST = "140.245.92.189";
 const PROXY_PORT = 3128;
+const PROXY_USER = "jerry";
+const PROXY_PASS = "910902";
 
 function buildPAC(domains) {
   const conditions = domains
@@ -11,7 +13,7 @@ function buildPAC(domains) {
       if (
         ${conditions}
       ) {
-        return "PROXY ${PROXY_HOST}:${PROXY_PORT}";
+        return "PROXY ${PROXY_USER}:${PROXY_PASS}@${PROXY_HOST}:${PROXY_PORT}";
       }
       return "DIRECT";
     }
